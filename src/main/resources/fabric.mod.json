@@ -1,0 +1,25 @@
+{
+  "id": "alphaui",
+  "name": "AlphaUI",
+  "description": "Minecraft Alpha/Beta UI",
+  "version": "0.0.1",
+  "side": "client",
+  "authors": [
+    {
+      "name": "geni",
+      "website": "https://geni.site",
+      "email": "me@geni.site"
+    }
+  ],
+  "links": {
+    "homepage": "https://polgarian.life",
+    "issues": "https://github.com/polgaria/AlphaUI/issues",
+    "sources": "https://github.com/polgaria/AlphaUI"
+  },
+  "requires": {
+    "fabric": "*"
+  },
+  "mixins": {
+    "client": "alphaui.client.json"
+  }
+}
