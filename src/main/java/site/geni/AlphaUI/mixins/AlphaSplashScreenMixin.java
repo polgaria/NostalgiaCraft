@@ -19,7 +19,7 @@ public class AlphaSplashScreenMixin extends Screen {
 	}
 
 	@ModifyConstant(constant = @Constant(floatValue = 1000F), method = "draw")
-	private float alphaBackgroundColor(float original) {
+	private float fadeSpeed(float original) {
 		return 0F;
 	}
 
@@ -29,7 +29,7 @@ public class AlphaSplashScreenMixin extends Screen {
 	}
 
 	@Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/class_766;method_3317(FF)V"), method = "draw")
-	private void test(class_766 class_766, float float_1, float float_2) {
+	private void drawDirtBackgroundDuringFade(class_766 class_766, float float_1, float float_2) {
 		this.drawBackground();
 	}
 }
