@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "site.geni.AlphaTitle.mixins",
+  "package": "site.geni.AlphaUI.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AlphaSplashScreenMixin",
