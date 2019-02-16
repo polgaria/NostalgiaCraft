@@ -1,13 +1,10 @@
-package site.geni.AlphaUI.mixins;
+package site.geni.AlphaUI.mixins.client;
 
 import net.minecraft.class_766;
 import net.minecraft.client.gui.Screen;
 import net.minecraft.client.gui.SplashScreen;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @SuppressWarnings("unused")
@@ -31,5 +28,10 @@ public class AlphaSplashScreenMixin extends Screen {
 	@Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/class_766;method_3317(FF)V"), method = "draw")
 	private void drawDirtBackgroundDuringFade(class_766 class_766, float float_1, float float_2) {
 		this.drawBackground();
+	}
+
+	@ModifyArgs(at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;color4f(FFFF)V", ordinal = 1), method = "draw")
+	private void fadeColor(Args args) {
+		args.setAll(0F, 0F, 0F, 0F);
 	}
 }

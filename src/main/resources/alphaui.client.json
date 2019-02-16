@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "site.geni.AlphaUI.mixins",
+  "package": "site.geni.AlphaUI.mixins.client",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AlphaSplashScreenMixin",
     "AlphaMainMenuMixin"
   ],
-  "minVersion": "",
+  "minVersion": "0.7.11",
   "injectors": {
     "defaultRequire": 1
   }

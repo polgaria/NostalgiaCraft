@@ -2,7 +2,7 @@
   "id": "alphaui",
   "name": "AlphaUI",
   "description": "Minecraft Alpha/Beta UI",
-  "version": "0.0.1",
+  "version": "${version}",
   "side": "client",
   "authors": [
     {
