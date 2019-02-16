@@ -1,2 +1,2 @@
-# AlphaUI
-an attempt to bring back some of the UI from late Alpha/early Beta
+# NostalgiaCraft
+improving upon (and intended to be used with) the NostalgiaCraft resource pack

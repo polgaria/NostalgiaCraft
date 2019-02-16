@@ -1,7 +1,7 @@
 {
-  "id": "alphaui",
-  "name": "AlphaUI",
-  "description": "Minecraft Alpha/Beta UI",
+  "id": "nostalgiacraft",
+  "name": "NostalgiaCraft",
+  "description": "",
   "version": "${version}",
   "side": "client",
   "authors": [
@@ -13,13 +13,13 @@
   ],
   "links": {
     "homepage": "https://polgarian.life",
-    "issues": "https://github.com/polgaria/AlphaUI/issues",
-    "sources": "https://github.com/polgaria/AlphaUI"
+    "issues": "https://github.com/polgaria/NostalgiaCraft/issues",
+    "sources": "https://github.com/polgaria/NostalgiaCraft"
   },
   "requires": {
     "fabric": "*"
   },
   "mixins": {
-    "client": "alphaui.client.json"
+    "client": "nostalgiacraft.client.json"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "site.geni.NostalgiaCraft.mixins.client",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "SplashScreenMixin",
+    "MainMenuMixin",
+    "ChestModelMixin",
+    "ChestBlockEntityRendererMixin"
+  ],
+  "minVersion": "0.7.11",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,4 +1,4 @@
-package site.geni.AlphaUI.mixins.client;
+package site.geni.NostalgiaCraft.mixins.client;
 
 import net.minecraft.class_766;
 import net.minecraft.client.gui.Screen;
@@ -9,14 +9,14 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @SuppressWarnings("unused")
 @Mixin(SplashScreen.class)
-public class AlphaSplashScreenMixin extends Screen {
+public abstract class SplashScreenMixin extends Screen {
 	@ModifyArg(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/SplashScreen;drawRect(IIIII)V", ordinal = 0), method = "draw", index = 4)
 	private int alphaBackgroundColor(int original) {
 		return -13159581;
 	}
 
 	@ModifyConstant(constant = @Constant(floatValue = 1000F), method = "draw")
-	private float fadeSpeed(float original) {
+	private float instantFadeSpeed(float original) {
 		return 0F;
 	}
 
@@ -31,7 +31,7 @@ public class AlphaSplashScreenMixin extends Screen {
 	}
 
 	@ModifyArgs(at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;color4f(FFFF)V", ordinal = 1), method = "draw")
-	private void fadeColor(Args args) {
+	private void fadeTransparentColor(Args args) {
 		args.setAll(0F, 0F, 0F, 0F);
 	}
 }
