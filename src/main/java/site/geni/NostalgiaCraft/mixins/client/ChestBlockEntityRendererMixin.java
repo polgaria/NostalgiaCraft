@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @SuppressWarnings("unused")
 @Mixin(ChestBlockEntityRenderer.class)
 public abstract class ChestBlockEntityRendererMixin {
-	@ModifyConstant(constant = @Constant(floatValue = 1.5707964F), method = "method_3561")
+	@ModifyConstant(constant = @Constant(floatValue = 1.5707964F), method = "method_3561(Lnet/minecraft/block/entity/BlockEntity;FLnet/minecraft/client/render/entity/model/ChestEntityModel;)V")
 	private float removeLidAnimation(float orig) {
 		return 0F;
 	}

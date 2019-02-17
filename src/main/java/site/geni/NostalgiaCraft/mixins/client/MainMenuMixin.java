@@ -1,6 +1,7 @@
 package site.geni.NostalgiaCraft.mixins.client;
 
 import net.minecraft.class_766;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.MainMenuScreen;
 import net.minecraft.client.gui.Screen;
 import org.spongepowered.asm.mixin.Final;
@@ -9,6 +10,7 @@ import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
@@ -31,10 +33,14 @@ public abstract class MainMenuMixin extends Screen {
 		this.drawBackground();
 	}
 
-	@ModifyArgs(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/MainMenuScreen;drawString(Lnet/minecraft/client/font/FontRenderer;Ljava/lang/String;III)V", ordinal = 0), method = "draw")
-	private void betaVersionText(Args args) {
-		args.set(3, 2);
-		args.set(4, 5263440);
+	@ModifyArg(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/MainMenuScreen;drawString(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;III)V", ordinal = 0), method = "draw", index = 3)
+	private int versionTextPosition(int original) {
+		return 2;
+	}
+
+	@ModifyArg(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/MainMenuScreen;drawString(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;III)V", ordinal = 0), method = "draw", index = 4)
+	private int versionTextColor(int original) {
+		return 5263440;
 	}
 
 	@Inject(at = @At("RETURN"), method = "<init>(Lnet/minecraft/class_766;J)V")
